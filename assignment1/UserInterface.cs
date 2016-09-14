@@ -6,32 +6,45 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    class UserInterface
+    class UserInterface : Program
     {
-       
-        public UserInterface() 
+
+        public int GetUserInput()
         {
-            DisplayMenu();   
+            this.DisplayMenu();
+
+            string input = Console.ReadLine();
+
+            while (input != "1" && input != "2" && input != "3" && input != "4" && input != "6")
+            {
+                Console.WriteLine("That is not a valid entry");
+                Console.WriteLine("Please make a valid choice");
+                Console.WriteLine();
+
+
+                this.DisplayMenu();
+
+                input = Console.ReadLine();
+
+            }
+
+            return Int32.Parse(input);
         }
 
-        public int menuNumber
-        {
-            get { return menuNumber; }
-            set { menuNumber = value; }
-        }
 
         public void DisplayMenu() //Displays top navigation menu
         {
-            Console.Clear();
+           
             Console.WriteLine("{0,20}{1,22}{2,20}{3,22}{4,10}",
                "1.) Load Wine List", "2.) Search Wine List", "3.) Add New Wine", "4.) Print Wine List", "5.) Exit");
             Console.WriteLine("____________________________________________________________________");
 
             Console.Write("Enter Menu Number: ");
-
-             menuNumber = Convert.ToInt32(Console.ReadLine());
-    
-        }        
+ 
+            
+        }      
+        
+   
 
     }
 }
