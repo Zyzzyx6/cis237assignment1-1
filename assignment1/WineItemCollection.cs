@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    class WineItemCollection 
+    class WineItemCollection : CSVProcessorClass
     {
 
         //***************
@@ -15,7 +15,8 @@ namespace assignment1
         private string _wineID;
         private string _description;
         private string _pack;
-        
+
+
         //***************
         //Properties
         //***************
@@ -38,6 +39,7 @@ namespace assignment1
             set { _pack = value; }
         }
 
+      
         //***************
         //Constructor
         //***************
@@ -49,31 +51,56 @@ namespace assignment1
 
         }
 
-       
+
+        public WineItemCollection(string process) //Process CSV file into 2d array called wineList
+        {
+            CSVProcessorClass csvProcess = new CSVProcessorClass();
+        }
+
+        
+        public WineItemCollection()
+        {
+            //do nothing
+        }
+
+        //*************************
+        //Methods
+        //*************************
+        public void printFullArray()
+        {
+                //Loops through and prints full array
+            for (int row = 0; row < 3963; row++)
+            {
+                if (wineList != null)
+                {
+
+                    Console.Write("{0,6}{1,60}{2,20}", wineList[row, 0], wineList[row, 1], wineList[row, 2]);
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine("Nothin");
+                }
+            }
+
+            Console.WriteLine("Printed");
+            
+        }
 
 
-        //public WineItemCollection(string print)
+        //foreach (string wineID in CSVProcessorClass.wineList)
+        //            {
+        //                if (wineID != null)
+        //                {
+        //                    //allOutput += wine.ToString() + " " + wine.YearlySalary() + Environment.NewLine;
+        //                }
+        //            }
+        //for (int row = 0; row < 3960; row++)
         //{
-        //    printarray();
+        //    Console.Write("{0,6}{1,60}{2,20}", wineList[row, 0], wineList[row, 1], wineList[row, 2]);
+        //    Console.WriteLine();
         //}
 
 
-       
-
-
-            //foreach (string wineID in CSVProcessorClass.wineList)
-            //            {
-            //                if (wineID != null)
-            //                {
-            //                    //allOutput += wine.ToString() + " " + wine.YearlySalary() + Environment.NewLine;
-            //                }
-            //            }
-            //for (int row = 0; row < 3960; row++)
-            //{
-            //    Console.Write("{0,6}{1,60}{2,20}", wineList[row, 0], wineList[row, 1], wineList[row, 2]);
-            //    Console.WriteLine();
-            //}
-      
-        
     }
 }

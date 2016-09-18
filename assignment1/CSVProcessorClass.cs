@@ -7,12 +7,14 @@ using System.IO;
 
 namespace assignment1
 {
-    public class CSVProcessorClass
+    public class CSVProcessorClass 
     {
-
 
         public string[,] wineList;
         
+        //****************
+        //CONSTRUCTOR
+        //****************
         public CSVProcessorClass()
         {
 
@@ -20,14 +22,12 @@ namespace assignment1
           
         }
 
-   
-
-
-        public void loadWineArray()
+        public void loadWineArray() //Creat WineLst array and Load array
         {
+            string pathToCsv = "../../../dataFiles/WineList.csv"; //create string variable for path to CSV
 
-            StreamReader file = new StreamReader("wineList.csv");
-            var lineCount = File.ReadAllLines("wineList.csv").Length;
+            StreamReader file = new StreamReader(pathToCsv);
+            var lineCount = File.ReadAllLines(pathToCsv).Length;
 
             wineList = new string[lineCount, 3];
 
@@ -36,7 +36,7 @@ namespace assignment1
 
                 string inputString;
 
-                file = File.OpenText("WineList.csv");     //Open external file and prepare for reading
+                file = File.OpenText(pathToCsv);     //Open external file and prepare for reading
 
                 // Load the array.
                 for (int row = 0; row < lineCount; row++)
@@ -48,9 +48,7 @@ namespace assignment1
                         wineList[row, col] = varString[col];
 
                     }
-                }
-
-                
+                }               
             }
 
             catch
@@ -60,42 +58,27 @@ namespace assignment1
             }
 
             file.Close();
+            //Pass array back into constructor of WineList
+            //WineItemCollection wineCollection = new WineItemCollection(wineList);
 
 
+            //for (int row = 0; row < 3963; row++)
+            //{
+            //    if (wineList != null)
+            //    {
 
-            Console.Clear();
-            //Console.WriteLine();
-            //Console.WriteLine();
-            //Console.WriteLine("Wine List Loaded");
-            //Console.WriteLine();
-            //return;
-        }
-
-
-
-        public void printFullArray()
-        {
-
-            for (int row = 0; row < 3963; row++)
-            {
-                if (wineList != null)
-                { 
-                Console.Write("{0,6}{1,60}{2,20}", wineList[row, 0], wineList[row, 1], wineList[row, 2]);
-                Console.WriteLine();
-                }
-            }
-
-
+            //        Console.Write("{0,6}{1,60}{2,20}", wineList[row, 0], wineList[row, 1], wineList[row, 2]);
+            //        Console.WriteLine();
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Nothin");
+            //    }
+            //}
 
         }
 
+      }
 
-
-
-
-
-
-    }
-
-    }
+   }
 

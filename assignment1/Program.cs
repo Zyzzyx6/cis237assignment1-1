@@ -23,36 +23,37 @@ namespace assignment1
            
             while (choice != 5)
             { 
-                
-              
+    
                 switch (choice)
                 {
                     case 1:
-                        CSVProcessorClass csvProcess = new CSVProcessorClass();
+
+                        WineItemCollection wineCollection = new WineItemCollection("process");
+                        //CSVProcessorClass csvProcess = new CSVProcessorClass();
+                        Console.WriteLine();
                         Console.WriteLine("WineList Loaded");
-                        
+                        Console.WriteLine();
+
                         break;
-                    case 2:
-                        
-                        
+                    case 2:     //Search wine list
+
                         break;
-                    case 3:
+                    case 3:     //add new wine
 
                         break;
                     case 4:
-                        CSVProcessorClass print = new CSVProcessorClass();
-                        print.printFullArray();
+                        
+                        WineItemCollection printWineList = new WineItemCollection();
+                        printWineList.printFullArray();
                         break;
                     case 5:
+                       Environment.Exit(-1);
                         break;
                    
                 }
                 choice = ui.GetUserInput();
 
             }
-            
-
-            
 
 
         }
