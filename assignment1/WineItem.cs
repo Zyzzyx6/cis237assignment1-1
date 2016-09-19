@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    class WineItem
+    class WineItem : WineItemCollection
     {
+        public WineItem()
+        {
+            
+
+
+
+        }
+
+
+
     }
 }
+ 

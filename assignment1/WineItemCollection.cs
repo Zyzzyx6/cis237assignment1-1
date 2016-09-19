@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    class WineItemCollection : CSVProcessorClass
+    class WineItemCollection : CSVProcessorClass 
     {
 
         //***************
@@ -65,7 +65,7 @@ namespace assignment1
 
         //*************************
         //Methods
-        //*************************
+        //************************* 
         public void printFullArray()
         {
                 //Loops through and prints full array
