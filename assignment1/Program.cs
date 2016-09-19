@@ -28,16 +28,11 @@ namespace assignment1
                 {
                     case 1:
 
-                        WineItemCollection wineCollection = new WineItemCollection("process");
-                        //CSVProcessorClass csvProcess = new CSVProcessorClass();
-                        Console.WriteLine();
-                        Console.WriteLine("WineList Loaded");
-                        Console.WriteLine();
+                        WineItemCollection wineCollection = new WineItemCollection("process");                     
 
                         break;
                     case 2:     //Search wine list
-
-
+                        WineItem searchWine = new WineItem();
                         break;
                     case 3:     //add new wine
 
@@ -53,6 +48,7 @@ namespace assignment1
                    
                 }
                 choice = ui.GetUserInput();
+               
 
             }
 

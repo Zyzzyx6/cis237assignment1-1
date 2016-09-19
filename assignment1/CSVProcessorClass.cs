@@ -48,7 +48,10 @@ namespace assignment1
                         wineList[row, col] = varString[col];
 
                     }
-                }               
+                }
+                Console.WriteLine();
+                Console.WriteLine("WineList Loaded");
+                Console.WriteLine();
             }
 
             catch
@@ -58,23 +61,7 @@ namespace assignment1
             }
 
             file.Close();
-            //Pass array back into constructor of WineList
-            //WineItemCollection wineCollection = new WineItemCollection(wineList);
-
-
-            //for (int row = 0; row < 3963; row++)
-            //{
-            //    if (wineList != null)
-            //    {
-
-            //        Console.Write("{0,6}{1,60}{2,20}", wineList[row, 0], wineList[row, 1], wineList[row, 2]);
-            //        Console.WriteLine();
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Nothin");
-            //    }
-            //}
+         
 
         }
 

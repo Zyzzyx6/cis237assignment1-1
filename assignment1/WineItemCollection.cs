@@ -63,6 +63,8 @@ namespace assignment1
             //do nothing
         }
 
+
+
         //*************************
         //Methods
         //************************* 
@@ -88,18 +90,7 @@ namespace assignment1
         }
 
 
-        //foreach (string wineID in CSVProcessorClass.wineList)
-        //            {
-        //                if (wineID != null)
-        //                {
-        //                    //allOutput += wine.ToString() + " " + wine.YearlySalary() + Environment.NewLine;
-        //                }
-        //            }
-        //for (int row = 0; row < 3960; row++)
-        //{
-        //    Console.Write("{0,6}{1,60}{2,20}", wineList[row, 0], wineList[row, 1], wineList[row, 2]);
-        //    Console.WriteLine();
-        //}
+  
 
 
     }
