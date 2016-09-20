@@ -29,7 +29,7 @@ namespace assignment1
             StreamReader file = new StreamReader(pathToCsv);
             var lineCount = File.ReadAllLines(pathToCsv).Length;
 
-            wineList = new string[lineCount, 3];
+            wineList = new string[lineCount , 3];
 
             try
             {
@@ -51,7 +51,8 @@ namespace assignment1
                 }
                 Console.WriteLine();
                 Console.WriteLine("WineList Loaded");
-                Console.WriteLine();
+               // Console.WriteLine(wineList.GetLength(0));
+                //Console.WriteLine();
             }
 
             catch

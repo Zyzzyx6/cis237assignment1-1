@@ -9,7 +9,6 @@ namespace assignment1
     class WineItem : WineItemCollection
     {
 
-        //int input = 0;
         
         //****************
         //Constructors
@@ -19,6 +18,7 @@ namespace assignment1
             GetUserInput();
         }
 
+  
 
         public int GetUserInput()
         {
@@ -31,7 +31,8 @@ namespace assignment1
             bool found = false;
             int index = 0;
             int position = 0;
-            try { 
+            try {
+               
             while (!found && index < wineList.Length)
             {
                 if (wineList[index, 0] == value)
@@ -40,13 +41,7 @@ namespace assignment1
                     position = index;
                     showSearchResult(position);
                  }
-                if (found == true)
-                {
-
-                     //Console.WriteLine();
-                     //Console.WriteLine("Please enter a stock number to search:");
-                    //Console.WriteLine();
-                }
+                
                 index++;
             }
 
@@ -66,6 +61,7 @@ namespace assignment1
         //********************
         public void showSearchResult(int position)
         {
+
             Console.WriteLine();
             Console.WriteLine();
             Console.Write("{0,6}{1,60}{2,20}", wineList[position, 0], wineList[position, 1], wineList[position, 2]);
@@ -82,15 +78,13 @@ namespace assignment1
 
             Console.WriteLine();
             Console.WriteLine("Please enter a stock number to search:");
-            Console.WriteLine();
+            Console.WriteLine();            
 
             
 
-            //return Int32.Parse(input);
-
         }
 
-  
+       
 
 
     }
