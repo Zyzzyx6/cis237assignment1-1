@@ -1,4 +1,16 @@
-﻿using System;
+﻿//Marty Russon
+//Project 1 Wine List utility
+//September 22, 2017
+
+//Outside resources: Stackoverflow, Microsoft
+
+//Project: Wine List utility to demonstrate usage of multiple classes, 2d array creation and loading from 
+//an external csv file. Array search implamented and return results to screen. Add new wine to array.
+
+//Class: This class exclusively used for populating the empty array created in Main from an external csv file
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,31 +22,22 @@ namespace assignment1
     public class CSVProcessorClass 
     {
 
+     
         public string[,] wineList;
-        
-        //****************
-        //CONSTRUCTOR
-        //****************
-        public CSVProcessorClass()
-        {
 
-             loadWineArray();
-          
-        }
-
-        public void loadWineArray() //Creat WineLst array and Load array
+        public void loadWineArray(string[,] wineList) //Creat WineLst array and Load array
         {
             string pathToCsv = "../../../dataFiles/WineList.csv"; //create string variable for path to CSV
 
             StreamReader file = new StreamReader(pathToCsv);
             var lineCount = File.ReadAllLines(pathToCsv).Length;
-
-            wineList = new string[lineCount , 3];
+            
+            
 
             try
             {
 
-                string inputString;
+               string inputString;
 
                 file = File.OpenText(pathToCsv);     //Open external file and prepare for reading
 
@@ -51,8 +54,7 @@ namespace assignment1
                 }
                 Console.WriteLine();
                 Console.WriteLine("WineList Loaded");
-               // Console.WriteLine(wineList.GetLength(0));
-                //Console.WriteLine();
+                Console.WriteLine();
             }
 
             catch
@@ -62,11 +64,13 @@ namespace assignment1
             }
 
             file.Close();
-         
+ 
 
         }
 
-      }
+
+
+     }
 
    }
 

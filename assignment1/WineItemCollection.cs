@@ -1,4 +1,16 @@
-﻿using System;
+﻿//Marty Russon
+//Project 1 Wine List utility
+//September 22, 2017
+
+//Outside resources: Stackoverflow, Microsoft
+
+//Project: Wine List utility to demonstrate usage of multiple classes, 2d array creation and loading from 
+//an external csv file. Array search implamented and return results to screen. Add new wine to array.
+
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,66 +18,14 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    class WineItemCollection : CSVProcessorClass 
+    class WineItemCollection 
     {
-
-        //***************
-        //Backing Fields
-        //***************
-        private string _wineID;
-        private string _description;
-        private string _pack;
-
-
-        //***************
-        //Properties
-        //***************
-        //Why the hell did I create these. Late night insomnia and coding is embarassing
-        public string WineID
-        {
-            get { return _wineID; }
-            set { _wineID = value; }
-        }
-
-        public string Description
-        {
-            get { return _description; }
-            set { _description = value; }
-        }
-
-        public string Pack
-        {
-            get { return _pack; }
-            set { _pack = value; }
-        }
-
+        
       
         //***************
         //Constructor
         //***************
-        public WineItemCollection(string wineID, string description, string pack)
-        {
-            this._wineID = wineID;
-            this._description = description;
-            this._pack = pack;
-
-        }
-
-
-        public WineItemCollection(string process) //Process CSV file into 2d array called wineList
-        {
-            if (process == "process")
-            {
-                CSVProcessorClass csvProcess = new CSVProcessorClass();
-            }
-            else
-            {
-                addWineToArray();
-            }
-        }
-
         
-
         public WineItemCollection()
         {
             //do nothing
@@ -77,32 +37,7 @@ namespace assignment1
         //Methods
         //************************* 
 
-        public override string ToString()
-        {
-            return this._wineID + "     " + this._description + "     " + this._pack;
-        }
-
-
-        public void printFullArray()
-        {
-            int wineListSize = wineList.GetLength(0);
-                //Loops through and prints full array
-            for (int row = 0; row < wineListSize; row++)
-            {
-                if (wineList != null)
-                {
-
-                    Console.Write("{0,6}{1,60}{2,20}", wineList[row, 0], wineList[row, 1], wineList[row, 2]);
-                    Console.WriteLine();
-                }
-                
-            }
-
-            Console.WriteLine(wineList.GetLength(0));
-            
-        }
-
-        public void addWineToArray()
+        public void addWineToArray(string[,] wineList)
         {
             string wineIDInput;
             string wineDescriptionInput;
@@ -121,7 +56,7 @@ namespace assignment1
             
             int newRow = wineList.GetLength(0) + 1;
 
-            ResizeArray(ref wineList, 3, newRow);
+            
 
             Console.WriteLine();
             Console.WriteLine();
@@ -134,7 +69,7 @@ namespace assignment1
             wineList[insertRow, 1] = wineDescriptionInput.ToString();
             wineList[insertRow, 2] = winePackInput.ToString();
 
-            printFullArray();
+            
 
             Console.WriteLine();
             Console.WriteLine();
@@ -144,12 +79,6 @@ namespace assignment1
         }
 
 
-        private void ResizeArray(ref string[,] original, int cols, int rows)
-        {
-            string[,] wineList = new string[rows, cols];
-            Array.Copy(original, wineList, original.Length);
-            original = wineList;
-        }
-
+ 
     }
 }

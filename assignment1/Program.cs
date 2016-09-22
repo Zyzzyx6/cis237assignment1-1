@@ -1,34 +1,39 @@
 ﻿//Marty Russon
 //Project 1 Wine List utility
-//While the program fundamentally works, I way screwed this one up!!!!!!!!!
+//September 22, 2017
 
 //Outside resources: Stackoverflow, Microsoft
 
-//Known issues: I ran out of time. It is poorly documented and badly in need of error handling. I am completely 
-//unsure of layout. It also seems like I was recreating classes repetitively. 
-//Not sure how to test for existance of a class after they are instantiated.
-//while I did learn a lot about classes, methods within those classes and constructors. I do not understand 
-//normal layout and structure of a multi class program. I worked very hard on this yet came to realize the
-//limits of my knowledge. Please give me the exceptionally low grade I deserve. I may be in over my head.
+//Project: Wine List utility to demonstrate usage of multiple classes, 2d array creation and loading from 
+//an external csv file. Array search implamented and return results to screen. Add new wine to array.
+
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace assignment1
 {
     class Program
     {
+       
 
         static void Main(string[] args)
         {
+
+
             Console.WindowWidth = 100;
             Console.WindowHeight = 30;
            
-   
-            UserInterface ui = new UserInterface();
+            var System = new string[4000,3]; //Instantiates an empty 2d array names System
+            UserInterface ui = new UserInterface(); //Creates the navigation menu
+            CSVProcessorClass csvProcess = new CSVProcessorClass(); //Instantiates CSV processor class
+            WineItemCollection wineCollection = new WineItemCollection();
+            WineItem searchWine = new WineItem();
+            
 
             int choice = ui.GetUserInput();
            
@@ -37,25 +42,27 @@ namespace assignment1
     
                 switch (choice)
                 {
-                    case 1:
-
-                        WineItemCollection wineCollection = new WineItemCollection("process");                     
-
+                    case 1:     //Load array from CSV file
+                        csvProcess.loadWineArray(System);
+                           
                         break;
                     case 2:     //Search wine list
-                        WineItem searchWine = new WineItem();
-
+                        
+                        searchWine.searchWineList(System);
+                        ui.DisplaySearchResults(searchWine.ToString()); //Demonstrate override method
+                        
                         break;
-                    case 3:     //add new wine
-                        WineItemCollection addWine = new WineItemCollection("add");
-                        addWine.addWineToArray();
+                    case 3:     //Add new wine
+                       
+                        wineCollection.addWineToArray(System);
                         break;
-                    case 4: 
-                        WineItemCollection printWineList = new WineItemCollection("add");
-                        printWineList.printFullArray();
+                    case 4:     //Print entire list
+                        //ui.printFullArray(System);
+                        ui.PrintAllOutput(System);
+                       
                         break;
                     case 5:
-                       Environment.Exit(-1);
+                       Environment.Exit(-1); //Exits program
                         break;
                    
                 }

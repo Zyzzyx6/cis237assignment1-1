@@ -1,9 +1,10 @@
 # Assignment 1 - Review of C# Basic Concepts and Introduction to Git
 ## Due 9-20-2016
 
-## Author
+## Author: Marty Russon
 
-## Description
+## Description: Wine List utility to demonstrate usage of multiple classes, 2d array creation and loading from 
+//an external csv file. Array search implamented and return results to screen. Add new wine to array.
 
 Create a C# console program to work with a .CSV wine list. The program should continually run until the user decides to exit (entering a certain character on the keyboard). The program should allow the following functionality:
 
@@ -79,6 +80,6 @@ Suggestion/Hints:
 | Documentation       | 5      |
 | **Total**           | **100**|
 
-## Outside Resources Used
+## Outside Resources Used: StackOverflow, Micrpsoft
 
-## Known Problems, Issues, And/Or Errors in the Program
+## Known Problems, Issues, And/Or Errors in the Program: No errors that I can find
