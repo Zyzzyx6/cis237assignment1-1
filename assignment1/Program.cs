@@ -1,6 +1,6 @@
 ﻿//Marty Russon
 //Project 1 Wine List utility
-//September 22, 2017
+//September 9, 2017
 
 //Outside resources: Stackoverflow, Microsoft
 
@@ -28,7 +28,7 @@ namespace assignment1
             Console.WindowWidth = 100;
             Console.WindowHeight = 30;
            
-            var System = new string[4000,3]; //Instantiates an empty 2d array names System
+            var System = new string[4000,3]; //Instantiates an empty 2d array named System
             UserInterface ui = new UserInterface(); //Creates the navigation menu
             CSVProcessorClass csvProcess = new CSVProcessorClass(); //Instantiates CSV processor class
             WineItemCollection wineCollection = new WineItemCollection();

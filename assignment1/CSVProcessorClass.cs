@@ -1,6 +1,6 @@
 ﻿//Marty Russon
 //Project 1 Wine List utility
-//September 22, 2017
+//September 9, 2017
 
 //Outside resources: Stackoverflow, Microsoft
 
